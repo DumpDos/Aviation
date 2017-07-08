@@ -5,10 +5,10 @@
 #####################################################################$
 
 # === Variables === #
-var='print' #-- Variable impression
+var='print'  #-- Variable impression
 
 # === Variables d'entrées === #
-_oaci=LFPO      #-- Code oaci de l'aeroport
+_oaci=LFPO   #-- Code oaci de l'aeroport
 
 _print=false #-- Condition impression
 
