@@ -6,7 +6,8 @@
 #####################################################################$
 
 # === Variables === #
-var='print'  #-- Variable impression
+var='print'     #-- Variable impression
+varmet='metar'  #-- Variable metar
 
 # === Variables d'entrées === #
 _oaci=LFPO   #-- Code oaci de l'aeroport
@@ -27,6 +28,9 @@ elif [[ $# -eq 2 ]]; then
 
 fi
 
+if [ $_data == $varmet ]
+then
+
 # === Téléchargement du fichier === #
 wget -q -O /home/pi/metar/$_oaci'_API.xml' 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='$_oaci'&hoursBeforeN$
 
@@ -39,6 +43,8 @@ sed -n 's,.*<raw_text>\(.*\)</raw_text>,\1,p' /home/pi/metar/$_oaci'_API.xml'
 # === Inscription des données dans les fichiers === #
 echo -e $metars>> /home/pi/metar/metar_historique.txt
 echo -e $metars>> /home/pi/metar/metar_$_oaci.txt
+
+fi
 
 # === Vérification des conditions
 if [ $_print == $var ]
