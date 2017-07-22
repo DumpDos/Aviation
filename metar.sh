@@ -49,6 +49,7 @@ echo -e $metars>> /home/pi/metar/metar_$_oaci.txt
 elif [ $_data == $varnot ]
 then
 
+test
 
 fi
 
