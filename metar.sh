@@ -8,6 +8,7 @@
 # === Variables === #
 var='print'     #-- Variable impression
 varmet='metar'  #-- Variable metar
+varnot='notam'  #-- variable notam
 
 # === Variables d'entrées === #
 _oaci=LFPO   #-- Code oaci de l'aeroport
@@ -28,6 +29,7 @@ elif [[ $# -eq 2 ]]; then
 
 fi
 
+# === Vérification des conditions === #
 if [ $_data == $varmet ]
 then
 
@@ -44,9 +46,13 @@ sed -n 's,.*<raw_text>\(.*\)</raw_text>,\1,p' /home/pi/metar/$_oaci'_API.xml'
 echo -e $metars>> /home/pi/metar/metar_historique.txt
 echo -e $metars>> /home/pi/metar/metar_$_oaci.txt
 
+elif [ $_data == $varnot ]
+then
+
+
 fi
 
-# === Vérification des conditions
+# === Vérification des conditions === #
 if [ $_print == $var ]
 then
 
