@@ -58,8 +58,8 @@ taf=$(sed -n 's,.*<raw_text>\(.*\)</raw_text>,\1,p' /home/pi/metar/$_oaci'_tafAP
 sed -n 's,.*<raw_text>\(.*\)</raw_text>,\1,p' /home/pi/metar/$_oaci'_tafAPI.xml'
 
 # === Inscription des données dans les fichiers === #
-echo -e $metars>> /home/pi/metar/tafs_historique.txt
-echo -e $metars>> /home/pi/metar/taf_$_oaci.txt
+echo -e $tafs>> /home/pi/metar/tafs_historique.txt
+echo -e $tafs>> /home/pi/metar/taf_$_oaci.txt
 
 fi
 
