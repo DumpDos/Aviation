@@ -17,11 +17,13 @@ _print=false #-- Condition impression
 
 # === paramètres entrées === #
 if [[ $# -eq 1 ]]; then
-       _oaci=$1
+       _data=$1
+       _oaci=$2
 
 elif [[ $# -eq 2 ]]; then
-       _oaci=$1
-       _print=$2
+       _data=$1
+       _oaci=$2
+       _print=$3
 
 fi
 
